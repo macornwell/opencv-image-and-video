@@ -9,15 +9,16 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='opencv_iav',
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(),
     include_package_data=True,
     license='GPLv3',
     description='Take a picture or record a video using OpenCV.',
     long_description=README,
     author='Mike Cornwell',
-    install_requires=['opencv-python',],
     author_email='michael.a.cornwell@gmail.com',
+    url='https://github.com/macornwell/opencv-image-and-video',
+    install_requires=['opencv-python',],
     entry_points = {
         'console_scripts': ['opencv_iav=opencv_iav.opencv_iav:main'],
     },

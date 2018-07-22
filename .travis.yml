@@ -2,6 +2,8 @@ matrix:
   include:
     - language: python
       python: 3.4
+      packages:
+        - mediainfo
       install:
         - pip install -r opencv_iav/requirements.txt
         - pip install -r opencv_iav/test_requirements.txt
