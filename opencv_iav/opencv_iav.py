@@ -1,4 +1,3 @@
-import os
 import argparse
 from opencv_iav.camera import OpenCVCamera
 
