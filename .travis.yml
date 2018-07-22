@@ -7,7 +7,6 @@ matrix:
         - pip install -r opencv_iav/test_requirements.txt
         - pip install coveralls
       script:
-        - cd python
         - python -m unittest discover
       after_success:
         - coveralls --root ./opencv_iav
