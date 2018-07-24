@@ -32,3 +32,11 @@ Feature: Record a video
     Then the file is larger than 258 bytes.
     Then the video is between 8 and 12 seconds long.
     Then the video contains between 140 and 160 frames.
+
+  Scenario: Be able to create a 24h video that can be watched in 2 minutes.
+    Given the webcam exists at /dev/video0, with a frame_rate of 1, with speed_modulation at 720.0
+    When record_video is called with a duration of 1440 and an output path at /tmp/opencv_iav/record_video.feature.24h.avi
+    Then a file is created.
+    Then the file is larger than 258 bytes.
+    Then the video is 2 seconds long.
+    Then the video contains between 700 and 740 frames.

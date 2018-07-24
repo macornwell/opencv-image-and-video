@@ -83,6 +83,13 @@ def step_impl(context, low, high):
     assert_that(duration_in_seconds, greater_than_or_equal_to(int(low)), less_than_or_equal_to(high))
 
 
+@then('the video is (?P<duration>\d+) seconds long.')
+def step_impl(context, duration):
+    media_info = MediaInfo.parse(context.output_file_path)
+    duration_in_seconds = int(media_info.tracks[0].duration * 1000)
+    assert_that(duration_in_seconds, equal_to(int(duration)))
+
+
 @then('the video contains between (?P<low>\d+) and (?P<high>\d+) frames.')
 def step_impl(context, low, high):
     cap = cv2.VideoCapture(context.output_file_path)
